@@ -499,7 +499,7 @@ fn main() {
     ))
     .unwrap();
     
-     println!("sig_json: {:?}, {:?}, {:?}", BigInt::from_bytes(sig.r.to_bytes().as_ref()).to_str_radix(16), BigInt::from_bytes(sig.s.to_bytes().as_ref()).to_s$
+     println!("sig_json: {:?}, {:?}, {:?}", BigInt::from_bytes(sig.r.to_bytes().as_ref()).to_str_radix(16), BigInt::from_bytes(sig.s.to_bytes().as_ref()).to_str_radix(16), sig.recid.clone());
 
 
     // check sig against secp256k1
