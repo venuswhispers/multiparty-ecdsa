@@ -486,10 +486,10 @@ fn main() {
     let sig = local_sig
         .output_signature(&s_i_vec)
         .expect("verification failed");
-    println!("party {:?} Output Signature: \n", party_num_int);
-    println!("R: {:?}", sig.r);
-    println!("s: {:?} \n", sig.s);
-    println!("recid: {:?} \n", sig.recid.clone());
+    //println!("party {:?} Output Signature: \n", party_num_int);
+    //println!("R: {:?}", sig.r);
+    //println!("s: {:?} \n", sig.s);
+    //println!("recid: {:?} \n", sig.recid.clone());
 
     let sign_json = serde_json::to_string(&(
         "r",
@@ -498,6 +498,9 @@ fn main() {
         BigInt::from_bytes(sig.s.to_bytes().as_ref()).to_str_radix(16),
     ))
     .unwrap();
+    
+     println!("sig_json: {:?}, {:?}, {:?}", BigInt::from_bytes(sig.r.to_bytes().as_ref()).to_str_radix(16), BigInt::from_bytes(sig.s.to_bytes().as_ref()).to_s$
+
 
     // check sig against secp256k1
     check_sig(&sig.r, &sig.s, &message_bn, &y_sum);
