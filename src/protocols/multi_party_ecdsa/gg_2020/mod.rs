@@ -20,6 +20,7 @@ pub mod state_machine;
 #[cfg(test)]
 mod test;
 
+#[allow(dead_code)]
 #[derive(Clone, Debug)]
 pub struct ErrorType {
     error_type: String,
